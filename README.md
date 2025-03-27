@@ -48,7 +48,14 @@ a set of essential shorthand prototypes, functions and vars for large Vanilla JS
 22- escapeHTML(str): Sanitizes passed string against some Cyber atacks like (XSS). Basicly it escapes HTML special characters (&, <, >, ", ') in a string with their corresponding HTML entities.
 
 
+# # # Generators:
+
+the last line of the code is generator for classnames like "col1, col1.5, col2, col2.5, ...col12" representing the partitions of the width devided by 24 partitions each represents a specific percent of the parent element's avalable width (after the padding reservation), this generator counts for 3 device sizes namely "mob_" for mobile and "tab_" for tablet, while the default is for all other media query sizes.
+
+
+
 # # Contribution Note:
 
 Kindly suggest any improvements you can put in this repo, thanks in advance...!
+
 
