@@ -1,7 +1,7 @@
-# vanilla-JS-shorthands
+# vanilla-JS-Essentials
 a set of essential shorthand prototypes, functions and vars for large Vanilla JS (libs/packages/frameworks) development.
 
-# # Shorthand List:
+# # Contents:
 
 1- wndw=window and w=wndw
 
@@ -33,7 +33,7 @@ a set of essential shorthand prototypes, functions and vars for large Vanilla JS
 
 15- findEl(el,s): finds specific single Element using querySelector("css selector")
 
-16- findEl(el,s): finds specific multiple Elements using querySelectorAll("css selectors")
+16- findEls(el,s): finds specific multiple Elements using querySelectorAll("css selectors")
 
 17- updateAtts(el,nAtts): updates existing attributes of given element, the new attributes should be passed as an object of (key:value) pairs.
 
@@ -41,7 +41,11 @@ a set of essential shorthand prototypes, functions and vars for large Vanilla JS
 
 19- att(el,a): gets the value of the given attribute of the given element
 
-20- capitalize(): capitalizes the string instance this prototype applied on
+20- capitalize(): capitalizes the string instance (i.e: "welcome home".capitalize() will output "Welcome Home")
+
+21-  format(): similar to the python string.format(), applied to the string instance, Replaces placeholders like {0}, {1}, etc., with corresponding arguments, and escapes curly braces using {{ and }}, (i.e: "welcome home {0}, you are {1}.".format(username, "amazing") will output "Welcome Home John, you are amazing.")
+
+22- escapeHTML(str): Sanitizes passed string against some Cyber atacks like (XSS). Basicly it escapes HTML special characters (&, <, >, ", ') in a string with their corresponding HTML entities.
 
 
 # # Contribution Note:
