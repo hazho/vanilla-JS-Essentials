@@ -1,6 +1,6 @@
 {
   "name": "vanilla-js-essentials",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A set of essential shorthand prototypes, functions and vars for Vanilla JS development projects",
   "main": "essentials.js",
   "scripts": {
