@@ -36,8 +36,14 @@ setAttsX=(el,obj)=>{
 on=(el,evt,fn,opt)=>{if(!el)return;if(el.addEventListener){el.addEventListener(evt,fn,opt);setAtt(el,'data-has-listener','1')}},
 off=(el,evt,fn,opt)=>{if(!el)return;if(el.removeEventListener){el.removeEventListener(evt,fn,opt);rmAtt(el,'data-has-listener','1')}},
 createEl=(t,d=doc)=>{return d.createElement(t)},
-copyArray=(a,b)=>{var i;a.length=b.length;for(i=0;i<b.length;i++){a[i]=b[i]}},/** Copy contents of an array to another without allocating new array. */
+copyArray=(a,b)=>{var i;a.length=b.length;for(i=0;i<b.length;i++){a[i]=b[i]}},/** Copy contents of an array to another without allocating new array. (no deep copying, because always deepCopy alocates new memory address for nested objects/arrays)*/
 get_a_r=(el)=>{if(!el){return w.innerWidth/w.innerHeight}return el.offsetWidth/el.offsetHeight};
+
+w.showEl=el=>{if(!el?.classList)return;el.classList.remove("hidden");if(getComputedStyle(el).display=="none")el.style.removeProperty("display")}
+w.showEls=els=>{els.forEach(el=>{w.showEl(el)})}
+w.hideEl=el=>{if(!el?.classList)return;el.classList.add("hidden")}
+w.hideEls=els=>{els.forEach(el=>{w.hideEl(el)})}
+w.toggleShow=elOrEls=>{let t=el=>{if(!el?.classList)return;if(el.classList.contains("hidden")||getComputedStyle(el).display=="none")w.showEl(el);else w.hideEl(el)};(elOrEls instanceof NodeList||Array.isArray(elOrEls)?elOrEls:[elOrEls]).forEach(t)}
 
 escapeHTML=str=>{return str?.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;")}
 (()=>{
