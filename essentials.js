@@ -43,7 +43,8 @@ w.showEl=el=>{if(!el?.classList)return;el.classList.remove("hidden");if(getCompu
 w.showEls=els=>{els.forEach(el=>{w.showEl(el)})}
 w.hideEl=el=>{if(!el?.classList)return;el.classList.add("hidden")}
 w.hideEls=els=>{els.forEach(el=>{w.hideEl(el)})}
-w.toggleShow=elOrEls=>{let t=el=>{if(!el?.classList)return;if(el.classList.contains("hidden")||getComputedStyle(el).display=="none")w.showEl(el);else w.hideEl(el)};(elOrEls instanceof NodeList||Array.isArray(elOrEls)?elOrEls:[elOrEls]).forEach(t)}
+// toggleVisibility
+w.tVis=elOrEls=>{let t=el=>{if(!el?.classList)return;if(el.classList.contains("hidden")||getComputedStyle(el).display=="none")w.showEl(el);else w.hideEl(el)};(elOrEls instanceof NodeList||Array.isArray(elOrEls)?elOrEls:[elOrEls]).forEach(t)}
 
 escapeHTML=str=>{return str?.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;")}
 (()=>{
